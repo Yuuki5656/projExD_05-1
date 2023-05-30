@@ -22,7 +22,7 @@ class Bird(pg.sprite.Sprite):
         self.cnt = 0  # こうかとんが飛んだときに頂上で浮遊している時間
         self.j_h = 0  # こうかとんが飛ぶときの高さの設定
         self.num=num
-        self.img = pg.image.load(f"ex05/fig/{self.num}.png")
+        self.img = pg.image.load(f"ex05_yu/ex05/fig/{self.num}.png")
         self.rect = self.img.get_rect()
         self.rect.centerx = x
         self.rect.bottom = 500
@@ -56,7 +56,7 @@ class Bird(pg.sprite.Sprite):
                     self.rect.bottom += 5  # 5づつ降下する
         elif mode == 1:
             self.num = 8  # こうかとんの画像を8番に変更
-            self.img = pg.image.load(f"ex05/fig/{self.num}.png")
+            self.img = pg.image.load(f"ex05_yu/ex05/fig/{self.num}.png")
             screen.blit(self.img,self.rect)
             font1 = pg.font.SysFont(None, 80)
             text1 = font1.render("GAME OVER",True,(0,0,0))  
@@ -80,7 +80,7 @@ class Background:
         引数1 screen: 描画の時につかうpg.Surface
         """
         self.x=0  # 背景の移動距離self.xを0に初期化
-        self.bg_img = pg.image.load("ex05/fig/pg_bg.jpg")
+        self.bg_img = pg.image.load("ex05_yu/ex05/fig/pg_bg.jpg")
         self.bg_img_fl = pg.transform.flip(self.bg_img,True,False)
         screen.blit(self.bg_img_fl,[-800,0])
 
@@ -116,7 +116,7 @@ class Enemy(pg.sprite.Sprite):
         self.e_x = e_x
         self.vx = 0  # こうかとんの動きに連動した動きを設定するself.vxを0に初期化
         self.ev = 3  # 敵の移動速度を3に初期化
-        self.ene_img = pg.transform.rotozoom(pg.image.load("ex05/fig/monster11.png"),0,0.2)
+        self.ene_img = pg.transform.rotozoom(pg.image.load("ex05_yu/ex05/fig/monster11.png"),0,0.2)
         self.rect = self.ene_img.get_rect()
         self.rect.centerx = self.e_x
         self.rect.bottom = 500
@@ -148,7 +148,7 @@ class Goal(pg.sprite.Sprite):
         引数1 screen: 描画の時につかうpg.Surface
         """
         super().__init__()
-        self.g_img = pg.transform.rotozoom(pg.image.load("ex05/fig/torinosu_egg.png"),0,0.2)
+        self.g_img = pg.transform.rotozoom(pg.image.load("ex05_yu/ex05/fig/torinosu_egg.png"),0,0.2)
         self.rect = self.g_img.get_rect()
         self.rect.centerx = 3200
         self.rect.bottom = 500
@@ -283,7 +283,7 @@ class Coin(pg.sprite.Sprite):
         super().__init__()
         self.c_x = c_x
         self.c_y = c_y
-        self.coin_img = pg.transform.rotozoom(pg.image.load(f"ex05/fig/food_daizu_meet.png"), 0, 0.1)
+        self.coin_img = pg.transform.rotozoom(pg.image.load(f"ex05_yu/ex05/fig/food_daizu_meet.png"), 0, 0.1)
         self.coin_immg = pg.image
         self.rect = self.coin_img.get_rect()
         self.rect.centerx = self.c_x
